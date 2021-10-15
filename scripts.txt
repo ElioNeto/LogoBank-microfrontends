@@ -1,0 +1,35 @@
+-> criar app: ng g app [nome do app]
+
+-> ng add @angular/elements
+-> ng add @angular/elements --project [projeto]
+
+-> builder: ng add ngx-build-plus
+-> ng add ngx-build-plus --project [projeto]
+
+-> Live server:  npx live-server ./dist
+
+app.module.ts de exemplo
+
+import { Injector, NgModule } from "@angular/core";
+import { createCustomElement } from "@angular/elements";
+import { BrowserModule } from "@angular/platform-browser";
+
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [],
+})
+export class AppModule {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const elem = createCustomElement(AppComponent, { injector: this.injector });
+    customElements.define("micro-app-extrato", elem);
+  }
+}
+
+
+-> script de build:  "build:[projeto]": "ng build --project [projeto] --single-bundle --output-hashing none",

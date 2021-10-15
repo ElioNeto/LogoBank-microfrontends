@@ -1,0 +1,27 @@
+<mat-toolbar color="accent">
+  <span class="spacer not-expanded"></span>
+  <span class="logo-bank">Micro Bank</span>
+  <span class="spacer expanded"></span>
+  <span class="expanded">Extrato</span>
+  <span class="spacer expanded"></span>
+  <span class="expanded">Pagamentos</span>
+  <span class="spacer not-expanded"></span>
+  <span class="spacer expanded"></span>
+  <button mat-icon-button aria-label="Menu" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item class="item-not-expanded">
+      <mat-icon>paid</mat-icon>
+      <span>Pagamentos</span>
+    </button>
+    <button mat-menu-item class="item-not-expanded">
+      <mat-icon>article</mat-icon>
+      <span>Extrato</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>logout</mat-icon>
+      <span>Sair</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
