@@ -7,7 +7,6 @@ import { AppComponent } from "./app.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import { MatSidenavModule } from "@angular/material/sidenav";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatMenuModule } from "@angular/material/menu";
 
@@ -19,7 +18,6 @@ import { MatMenuModule } from "@angular/material/menu";
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatSidenavModule,
     BrowserAnimationsModule,
     MatMenuModule,
   ],
