@@ -6,15 +6,12 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
+  content = [{ page: "extrato" }, { page: "pagamento" }];
   ngOnInit() {
-    const extrato = document.createElement("script");
-    extrato.src = "http://localhost:8080/extrato/main.js";
-    document.body.appendChild(extrato);
-    const pagamento = document.createElement("script");
-    pagamento.src = "http://localhost:8080/pagamento/main.js";
-    document.body.appendChild(pagamento);
-    const header = document.createElement("script");
-    header.src = "http://localhost:8080/header/main.js";
-    document.body.appendChild(header);
+    for (let item in this.content) {
+      let node = document.createElement("script");
+      node.src = `http://localhost:8080/${this.content[item].page}/main.js`;
+      document.body.appendChild(node);
+    }
   }
 }
